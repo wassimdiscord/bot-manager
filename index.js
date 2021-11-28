@@ -36,20 +36,7 @@ async function start() {
     }
     if(question === "1") {
         const token = readline.question(`Entrer votre token : `)
-        request({
-            url: `https://discord.com/api/v8/users/@me`,
-            headers: {
-                Authorization: `Bot ${token}`
-            }
-        },async (err, response, body) => {
-            if(err) console.log(err)
-            if(!body) return console.log("No body")
-            const json = JSON.parse(body)
-
-            if (json.message === "401: Unauthorized") {
-                console.log(red(`Token Invalid`))
-            } else {
-                console.log(green(`Token Valid`))
+       
 		const name = readline.question(`Entrer le nom du bot : `)
 
 
@@ -58,35 +45,21 @@ async function start() {
             console.log(green(`Bot crée : ${bot.username}#${bot.discriminator}\nToken : ${bot.token}\nLien : https://discord.com/oauth2/authorize?client_id=${bot.id}&scope=bot&permissions=8`))
           
         });
-        }
-    })
+        
+   
 		   
     }
   
     if(question === "2") {
         const token = readline.question(`Entrer votre token : `)
-        request({
-            url: `https://discord.com/api/v8/users/@me`,
-            headers: {
-                Authorization: `Bot ${token}`
-            }
-        }, async(err, response, body) => {
-            if(err) console.log(err)
-            if(!body) return console.log("No body")
-            const json = JSON.parse(body)
-
-            if (json.message === "401: Unauthorized") {
-                console.log(red(`Token Invalid`))
-            } else {
-                console.log(green(`Token Valid`))
+     
 		const id = readline.question(`Entrer l'id de l'aplication : `)
 
 
         await deleteApp(id, token).then(async () => {
             console.log(green(`Bot supprimé`))
           
-        });}
-    })
+        });
     }
  
 }
