@@ -1,0 +1,18 @@
+{
+  "name": "webhook-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wassim",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "chalk": "^4.1.2",
+    "discord.js": "^12.5.3",
+    "readline-sync": "^1.4.10",
+    "request": "^2.88.2"
+  }
+}
